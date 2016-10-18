@@ -1,0 +1,85 @@
+<link rel="import" href="../polymer/polymer.html">
+<link rel="import" href="../paper-input/paper-input.html">
+<link rel="import" href="../iron-input/iron-input.html">
+<link rel="import" href="../paper-material/paper-material.html">
+<link rel="import" href="../paper-button/paper-button.html">
+
+<!--
+`svara-login`
+
+
+@demo demo/index.html 
+-->
+
+<dom-module id="svara-login">
+  <template>
+    <style>
+      :host {
+        display: block;
+      }
+
+      :host > * {
+        --primary-color: #4285f4;
+        margin: 24px;
+        padding: 16px;
+      }
+
+      a,
+      paper-button {
+        font-weight: bold;
+      }
+
+      a {
+        color: var(--primary-color);
+      }
+
+      paper-button {
+        color: #fff;
+      }
+
+      paper-button.primary {
+        background: var(--primary-color);
+      }
+
+      .wrapper-btns {
+        margin-top: 15px;
+      }
+
+      paper-button.link {
+        color: #757575;
+      }
+
+      h1 {
+        margin: 16px 0;
+        color: #212121;
+        font-size: 22px;
+      }
+    </style>
+
+    <paper-material elevation="1">
+      <h1>Login</h1>
+      <p><strong>Log in</strong> or <strong>sign up</strong> to access... stuff...</p>
+        
+      <paper-input id="username" label="Username" type="text" value="{{formData.username}}"></paper-input>
+      <paper-input id="password" label="Password" type="password" value="{{formData.password}}"></paper-input>
+      <div class="wrapper-btns">
+        <paper-button raised class="primary" on-tap="postLogin">Log In</paper-button>
+        <paper-button class="link" on-tap="postRegister">Sign Up</paper-button>
+      </div>
+    </paper-material>
+
+  </template>
+  <script>
+    Polymer({
+
+      is: 'svara-login',
+
+      properties: {
+        prop1: {
+          type: String,
+          value: 'svara-login',
+        },
+      },
+    });
+  </script>
+</dom-module>
